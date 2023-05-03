@@ -1,0 +1,40 @@
+// global styles
+
+h1 {
+	font-size: xx-large;
+}
+
+h2 {
+	font-size: x-large;
+}
+
+h3 {
+	font-size: large;
+}
+
+h4 {
+	font-size: medium;
+}
+
+ul {
+	li {
+		margin-left: 0.5rem;
+
+		&::before {
+			content: '•';
+			margin-right: 0.5rem;
+		}
+	}
+}
+
+blockquote {
+	border-left: 0.5rem solid var(--color-info);
+	padding-left: 1rem;
+}
+
+code {
+	background-color: var(--color-dark);
+	border-radius: 0.25rem;
+	padding: 0.25rem;
+	color: var(--color-white);
+}

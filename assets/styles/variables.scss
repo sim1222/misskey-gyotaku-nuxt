@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap');
+
+* {
+	font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+:root {
+	// Colors from bulma.io
+	--color-white: hsl(0, 0%, 100%);
+	--color-black: hsl(0, 0%, 4%);
+	--color-light: hsl(0, 0%, 96%);
+	--color-dark: hsl(0, 0%, 21%);
+
+	--color-primary: hsl(171, 100%, 41%);
+	--color-secondary: hsl(217, 71%, 53%);
+
+	--color-link: hsl(217, 71%, 53%);
+
+	--color-info: hsl(204, 86%, 53%);
+	--color-success: hsl(141, 53%, 53%);
+	--color-warning: hsl(48, 100%, 67%);
+	--color-danger: hsl(348, 100%, 61%);
+}
