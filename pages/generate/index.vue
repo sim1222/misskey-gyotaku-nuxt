@@ -24,17 +24,17 @@ const query = route.query as {
 };
 
 const updateLoop = setInterval(() => {
-		fetch(`${useRuntimeConfig().apiEndpoint}/api/v1/status?id=${query.id}`, {
-			headers: {
-				'Content-Type': 'application/json',
-			},
-		})
-			.then((res) => res.json())
-			.then((data) => {
-				current.value = data.progress;
-				message.value = data.message;
-			});
-	}, 1000);
+	fetch(`${useRuntimeConfig().apiEndpoint}/api/v1/status?id=${query.id}`, {
+		headers: {
+			'Content-Type': 'application/json',
+		},
+	})
+		.then(res => res.json())
+		.then(data => {
+			current.value = data.progress;
+			message.value = data.message;
+		});
+}, 1000);
 
 onUnmounted(() => {
 	clearInterval(updateLoop);
@@ -42,7 +42,7 @@ onUnmounted(() => {
 
 watchEffect(() => {
 	if (current.value === 100) {
-			router.push(`/result/${query.id}`);
+		router.push(`/result/${query.id}`);
 	}
 });
 </script>

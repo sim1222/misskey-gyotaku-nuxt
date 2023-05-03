@@ -1,9 +1,12 @@
 <template>
 	<div :class="$style.root">
-		<div :class="$style.bar" :style="{
+		<div
+			:class="$style.bar"
+			:style="{
 				backgroundColor: props.color ? `var(--color-${props.color})` : 'var(--color-primary)',
 				width: props.progress ? `${props.progress}%` : '0%',
-			}"></div>
+			}"
+		></div>
 		<div v-if="props.unknown" :class="$style.unknown"></div>
 	</div>
 </template>
