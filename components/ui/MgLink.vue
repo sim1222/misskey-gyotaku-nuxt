@@ -1,7 +1,7 @@
 <template>
 	<div :class="$style.root">
 		<a v-if="href" :class="$style.link" :href="href" target="_blank">
-			<slot /><i class="fa-solid fa-arrow-up-right-from-square" :class="$style.icon"></i>
+			<slot /><font-awesome-icon :icon="['fas', 'arrow-up-right-from-square']" :class="$style.icon" />
 		</a>
 		<div v-else :class="$style.link" @click="onClick">
 			<slot />
@@ -44,7 +44,7 @@ const onClick = () => {
 }
 
 .icon {
-	font-size: 0.9rem;
-	margin-left: 2px;
+	display: inline;
+	height: 1rem;
 }
 </style>

@@ -1,13 +1,13 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
 	<div :class="$style.root">
-		<pre v-if="props.block" :class="[$style.pre, `language-${lang}`]">
-			<code :class="[$style.code, `language-${lang}`]" v-html="Prism.highlight(props.code, Prism.languages[lang], lang)" />
+		<pre v-if="props.block" :class="[$style.pre, `language-${prismLang}`]">
+			<code :class="[$style.code, `language-${prismLang}`]" v-html="Prism.highlight(props.code, Prism.languages[prismLang], prismLang)" />
 		</pre>
 		<code
 			v-else
-			:class="[$style.code, `language-${lang}`]"
-			v-html="Prism.highlight(props.code, Prism.languages[lang], lang)"
+			:class="[$style.code, `language-${prismLang}`]"
+			v-html="Prism.highlight(props.code, Prism.languages[prismLang], prismLang)"
 		/>
 	</div>
 </template>
@@ -22,7 +22,8 @@ const props = defineProps<{
 	block?: boolean;
 }>();
 
-const lang = computed(() => (Prism.languages[props.language] ? props.language : 'js'));
+const lang = computed(() => props.language ?? 'js');
+const prismLang = computed(() => (Prism.languages[lang.value] ? lang.value : 'js'));
 </script>
 
 <style lang="scss" module>
