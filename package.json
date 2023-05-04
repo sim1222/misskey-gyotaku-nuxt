@@ -4,7 +4,7 @@
 	"scripts": {
 		"build": "nuxt build",
 		"dev": "nuxt dev",
-		"generate": "nuxt generate",
+		"generate": "nuxt generate && rm .output/404.html",
 		"preview": "nuxt preview",
 		"postinstall": "nuxt prepare",
 		"lint": "eslint --ext .ts,.vue --ignore-path .gitignore .",
