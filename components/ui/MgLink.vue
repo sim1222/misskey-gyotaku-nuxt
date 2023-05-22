@@ -1,7 +1,7 @@
 <template>
 	<div :class="$style.root">
 		<a v-if="href" :class="$style.link" :href="href" target="_blank">
-			<slot /><font-awesome-icon :icon="['fas', 'arrow-up-right-from-square']" :class="$style.icon" />
+			<slot /><icon-external-link :class="$style.icon" />
 		</a>
 		<div v-else :class="$style.link" @click="onClick">
 			<slot />
@@ -10,6 +10,8 @@
 </template>
 
 <script lang="ts" setup>
+import { IconExternalLink } from '@tabler/icons-vue';
+
 const props = defineProps<{
 	href?: string;
 	target?: string;
@@ -46,5 +48,7 @@ const onClick = () => {
 .icon {
 	display: inline;
 	height: 1rem;
+	width: 1rem;
+	vertical-align: text-bottom;
 }
 </style>
